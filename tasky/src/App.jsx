@@ -66,6 +66,8 @@ function App() {
         gutterBottom
         sx={{
           backgroundColor: 'gray',
+          fontWeight: 'bold',
+          textDecoration: 'underline',
           textAlign: 'center',
           color: 'white',
           padding: '20px',

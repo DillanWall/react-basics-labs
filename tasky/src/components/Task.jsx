@@ -6,29 +6,37 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import Divider from '@mui/material/Divider';
+
 
 const Task = (props) => {
     
     return (
     <Grid
         key={props.id}
-        size={{ xs: 12, md: 4 }}
+      size={{ xs: 12, sm: 6, md: 4 }}
     >
         <Card
     sx={{
       backgroundColor: props.done ? 'lightgrey' : 'lightblue',
-      padding: '20px'
+      padding: '20px',
+      border: 3
     }}
   >
     <CardHeader
       title={props.title}
       sx={{
+        fontfamily: 'Roboto, sans-serif',
+        fontWeight: 'bold',
         backgroundColor: 'white',
         borderRadius: '3px',
         padding: '20px',
         textAlign: 'center'
       }}
     />
+    <Divider>-</Divider>
     <CardContent>
       <Box
         sx={{
@@ -77,7 +85,7 @@ const Task = (props) => {
         color="success"
         onClick={props.markDone}
       >
-        Done
+        <CheckCircleIcon />Done
       </Button>
 
       <Button
@@ -86,7 +94,7 @@ const Task = (props) => {
         color="error"
         onClick={props.deleteTask}
       >
-        Delete
+        <DeleteIcon />Delete
       </Button>
     </CardActions>
   </Card>
